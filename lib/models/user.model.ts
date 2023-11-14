@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const communitySchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   id: {
     type: String,
     required: true,
@@ -16,25 +16,24 @@ const communitySchema = new mongoose.Schema({
   },
   image: String,
   bio: String,
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  },
   threads: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Thread",
     },
   ],
-  members: [
+  onboarded: {
+    type: Boolean,
+    default: false,
+  },
+  communities: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "Community",
     },
   ],
 });
 
-const Community =
-  mongoose.models.Community || mongoose.model("Community", communitySchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 
-export default Community;
+export default User;
