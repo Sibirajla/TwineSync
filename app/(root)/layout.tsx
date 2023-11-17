@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "TwineSync",
-  description: "A Next.js 13 Meta Threads application",
+  description: "Developed By Tg_Sibi",
 };
 
 export default function RootLayout({
